@@ -10,6 +10,7 @@
 #include <QGraphicsScene>
 
 #include <math.h>
+#include <float.h>
 
 #include "OLSOntologyGraphNodeItem.h"
 
@@ -19,7 +20,7 @@ OLSOntologyGraphRelationItem::OLSOntologyGraphRelationItem(QGraphicsItem *parent
   setPen(QPen(Qt::black, 1));
   setZValue(-1);
   m_width = 1.0;
-  m_lenght = MAXFLOAT;
+  m_lenght = DBL_MAX; //MAXFLOAT;
 
   setFlag(ItemIsSelectable);
 
