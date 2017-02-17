@@ -1,7 +1,7 @@
 #include "OLSOntologyGraphElement.h"
 
 #include <QDebug>
-#include <QSTring>
+#include <QString>
 
 OLSOntologyGraphElement::OLSOntologyGraphElement() {
 
