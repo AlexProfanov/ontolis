@@ -8,6 +8,7 @@
 #include <QFont>
 #include <QFontMetrics>
 #include <QGraphicsScene>
+#include <float.h>
 
 #include <math.h>
 
@@ -19,7 +20,7 @@ OLSOntologyGraphRelationItem::OLSOntologyGraphRelationItem(QGraphicsItem *parent
   setPen(QPen(Qt::black, 1));
   setZValue(-1);
   m_width = 1.0;
-  m_lenght = MAXFLOAT;
+  m_lenght = FLT_MAX;
 
   setFlag(ItemIsSelectable);
 
