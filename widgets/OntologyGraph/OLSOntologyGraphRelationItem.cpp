@@ -8,7 +8,6 @@
 #include <QFont>
 #include <QFontMetrics>
 #include <QGraphicsScene>
-#include <float.h>
 
 #include <math.h>
 #include <float.h>
