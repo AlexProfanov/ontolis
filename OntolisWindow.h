@@ -55,6 +55,7 @@ class OntolisWindow : public QMainWindow {
     void clearConnections();
     void updateOntologyTreeData();
 
+    void openFile(QString path);
   private slots:
     void importSourceFileSlot();
 
