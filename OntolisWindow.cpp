@@ -64,6 +64,11 @@ OntolisWindow::OntolisWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::
   setupMenu();
   setupConverters();
   setupTransformators();
+  int argumentsCount = QCoreApplication::arguments().length();
+  qDebug() << argumentsCount;
+  if (argumentsCount > 1) {
+      openFile(QCoreApplication::arguments().at(1));
+  }
 }
 
 OntolisWindow::~OntolisWindow() {
@@ -152,6 +157,18 @@ void OntolisWindow::setupTransformators() {
           m_transformatorsMapping.insert(extension.trimmed(), dir.absoluteFilePath(fileName));
         }
       }
+    }
+}
+
+void OntolisWindow::openFile(QString path) {
+    OLSProjectFile *file = m_currentProject.openFile(path);
+
+    if (file != NULL) {
+      OLSOntologyGraphWidget *widget = createNewOntologyWidget(file);
+      widget->dataChangedSlot();
+
+      updateOntologyTreeData();
+      m_projectTreeViewController->updateData();
     }
 }
 
